@@ -1,0 +1,2 @@
+for = fazer repeticao com uma quantidade DETERMINADA de vezes.
+while =  fazer repeticao com uma quantidade INDETERMINADA de vezes.

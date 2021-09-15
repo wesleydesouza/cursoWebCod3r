@@ -1,0 +1,3 @@
+.push() =  adiciona novos elementos na array.
+.pop() = ele pega o ultimo valor do array e retira do array.
+delete nomeArray[numero] = tira tbm o elemento.
