@@ -7,5 +7,5 @@ function contarCaractere(carac, string){
     };
     console.log(contar);
 };
-contarCaractere("r", "A sorte favorece os audazes") // retornará 2
-contarCaractere("c", "Conhece-te a ti mesmo") // retornará 1
+contarCaractere("r", "A sorte favorece os audazes"); // retornará 2
+contarCaractere("c", "Conhece-te a ti mesmo"); // retornará 1
