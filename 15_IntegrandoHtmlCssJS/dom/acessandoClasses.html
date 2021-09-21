@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Acessando Classes</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+</head>
+
+<body class='conteudo exercicio'>
+    <div>
+        Classes
+    </div>
+    <script>
+        const classes = document.querySelector("div").classList;//pega a lista de classes
+        classes.add("destaque");//adiciona o css chamado classe destaque
+        classes.remove("destaque");//remove
+        classes.toggle("destaque");//alternancia. Se nao existir add e se existe ele remove
+        console.log(classes.contains("destaque"));//verifica se a classe esta contida
+        console.log(classes.length);//tamanho, no caso, 1
+        classes.toggle("destaque");//agr remove
+        console.log(clases.length);//agr 0
+
+        classes.add("destaque1");
+        classes.add("destaque2");
+        console.log(classes.length);//2 mas nao acontece nada pq nao consta essas classes no css
+        
+        for(let c of classes){
+            console.log(c);
+        };
+
+        classe.array.forEach(c => console.log(c));
+    </script>
+</body>
+
+</html>
