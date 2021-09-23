@@ -45,7 +45,41 @@
     </div>
     <div class="direita" wm-dropzone></div>
     <script>
-        // ...
+        const items = document.querySelectorAll("[wm-dropzone] .item");
+        
+        items.forEach((item, index) => {
+            
+            //transformando o elemento em arrastavel--------------------------------------
+            item.draggable = true;
+            //definindo o id do item
+            item.id = item.id || `draggable-item-${index}`;
+            //O evento ondragstart ocorre quando o usuário começa a arrastar um elemento ou seleção de texto.
+
+            //gerando o id
+            item.ondragstart = e =>
+                //O DataTransfer é usado para conter os dados que estão sendo arrastados durante uma operação de arrastar e soltar. Ele pode conter um ou mais itens de dados, cada um de um ou mais tipos de dados.
+                e.dataTransfer.setData("item-id", e.target.id);
+            });
+
+
+            //colando o elemento----------------------------------------------------------------
+
+            const dropzones = document.querySelectorAll("[wm-dropzone]");
+
+            dropzones.forEach(dropzone => {
+                 //O evento ondragstart ocorre quando o usuário termina de arrastar um elemento ou seleção de texto.
+
+                //tratando o evento para os restantes ser chamados
+                dropzone.ondragover = e => e.preventDefault();
+                //pegando o set do dataTranfer
+                dropzone.ondrop = function(e) {
+                    const id = e.dataTransfer.getData("item-id");
+                    const item = document.getElementById(id);
+                    
+                    e.target.appendChild(item);//deixa dentro do pai
+                   //dropzone.appendChild(item);//nao deixa dentro 
+                };
+            });
     </script>
 </body>
 

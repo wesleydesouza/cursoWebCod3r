@@ -9,7 +9,32 @@
 
 <body class='conteudo exercicio'>
     <script>
-        // ...
+        const body = document.querySelector("body");
+
+        const div1 = document.createElement("div");//cria uma div
+        div1.classList.add("destaque");//adiciona uma classe css
+        div1.innerHTML = "Primeiro";//add um valor no html
+
+        const div2 = document.createElement("div");
+        div2.setAttribute("wm-atributo", "valor");
+        div2.innerHTML = "segundo";
+
+        const p = document.createElement("p");
+        p.innerHTML = "terceiro";
+        const div3 = document.createElement("div");
+        div3.appendChild(p);//poem o paragrafo dentro da div3, adicionando o elemento sempre em ultimo lugar
+
+        body.appendChild(div1);
+        body.appendChild(div2);
+        body.appendChild(div3);
+
+        const texto = document.createTextNode("Antes...");//Pode ser passado tbm tranquilamente assim: document.createElement("Antes...");
+        div3.insertBefore(texto, div3.childNodes[0]);//adiciona antes de tal elemento, discriminado no array, no caso, antes do primeiro
+
+        const div4 = div3.cloneNode(true);//clona um elemento, passando "true" copia td que tem no elemento, "false" copia somente o elemento
+        body.appendChild(div4);//add
+        body.removeChild(div3);//remove um elemento
+
     </script>
 </body>
 

@@ -12,7 +12,19 @@
         <p>Texto Inicial</p>
     </div>
     <script>
-        // ...
+        const div = document.querySelector("div");
+        div.innerHTML = "texto Alterado";//add ou substitui o valor que ta dentro do elemento
+        //div.outerHTML = "Texto Alterado";//substitui o elemento, add o valor
+        div.insertAdjacentHTML("beforebegin", "<p>Antes Inicio</p>");//add o valor antes do elemento apontado
+        div.insertAdjacentHTML("afterbegin", "<p>Depois Inicio</p>"); //add o valor depois do elemento criado, ou seja, vai criar dentro do elemento
+        div.insertAdjacentHTML("beforeend", "<p>Antes Fim</p>"); //add o valor antes do fim do elemento criado, ou seja, vai criar dentro do elemento mas no final
+        div.insertAdjacentHTML("afterend", "<p>Depois Fim</p>"); //add o valor depois do fim do elemento criado, ou seja, vai criar fora e dps do elemento
+
+        //somente texto (sem tags)
+        console.log(div.innerText);
+
+        //texto com tags
+        console.log(div.innerHTML);
     </script>
 </body>
 
