@@ -1,0 +1,5 @@
+npm i -g create-react-app : prepara o react
+
+create-react-app nomeProjeto : cria o projeto
+
+npm start : para executar o projeto
